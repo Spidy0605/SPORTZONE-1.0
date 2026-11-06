@@ -21,8 +21,10 @@
       <a class="nav-link" href="#football">Football</a>
       <a class="nav-link" href="#fixtures">Fixtures</a>
       <a class="nav-link" href="#news">News</a>
+      <a class="nav-link" href="#players">Players</a>
+      <a class="nav-link" href="#favourites">Favourites</a>
     </nav>
-    <a class="header-cta" href="#fixtures">Explore matches <span>↗</span></a>
+    <div class="header-actions"><button class="header-cta" id="loginOpen">Login / Sign up</button><button class="admin-cta" id="adminOpen">Admin panel ↗</button></div>
   </header>
 
   <main>
@@ -113,6 +115,24 @@
       <article class="news-card"><div class="news-image news-football">⚽<span>FOOTBALL</span></div><div class="news-body"><small>FEATURE / 02</small><h3>Every league has a story.</h3><p>Bring fans closer to club news, league battles and matchday talking points.</p></div></article>
       <article class="news-card"><div class="news-image news-stats">📊<span>ANALYSIS</span></div><div class="news-body"><small>FEATURE / 03</small><h3>Numbers behind the game.</h3><p>Turn stats and performance data into stories fans can explore.</p></div></article>
     </div></section>
+
+    <section class="section extra-section" id="players">
+      <div class="section-heading"><div><div class="eyebrow">PLAYER ZONE</div><h2>STATS &amp; <em>RANKINGS</em></h2></div><span class="section-note">Sample profiles — update through Admin</span></div>
+      <div class="toolbar"><input id="playerSearch" type="search" placeholder="Search players..." aria-label="Search players"><select id="playerSport"><option value="all">All sports</option><option value="cricket">Cricket</option><option value="football">Football</option></select></div>
+      <div class="player-grid" id="playerGrid"></div>
+    </section>
+    <section class="section favourites-section" id="favourites">
+      <div class="section-heading"><div><div class="eyebrow">YOUR PERSONAL LINEUP</div><h2>FAVOURITE <em>TEAMS &amp; PLAYERS</em></h2></div><span class="section-note">Sign in to keep your picks on this device</span></div>
+      <div class="favourite-columns"><div><h3>Favourite teams</h3><div id="teamChoices" class="choice-list"></div></div><div><h3>Saved players</h3><div id="savedPlayers" class="saved-list">No saved players yet.</div></div></div>
+    </section>
+    <section class="section account-section" id="accountArea"><div class="section-heading"><div><div class="eyebrow">YOUR ACCOUNT</div><h2>FAN <em>PROFILE</em></h2></div></div><p id="accountMessage">Sign in to save your favourite teams and players.</p></section>
+    <section class="admin-section" id="adminPanel" hidden>
+      <div class="admin-heading"><div><div class="eyebrow">SPORTZONE CONTROL ROOM</div><h2>ADMIN <em>DASHBOARD</em></h2><p>Manage website content stored in this browser.</p></div><button class="button button-ghost" id="adminClose">Close panel ✕</button></div>
+      <div class="admin-stats" id="adminStats"></div>
+      <div class="admin-tabs"><button class="admin-tab active" data-admin-tab="matches">Matches</button><button class="admin-tab" data-admin-tab="players">Players</button><button class="admin-tab" data-admin-tab="news">News</button><button class="admin-tab" data-admin-tab="users">Users</button></div>
+      <div class="admin-content" id="adminContent"></div>
+    </section>
+    <div class="modal" id="authModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" id="authClose" aria-label="Close">×</button><div class="eyebrow">WELCOME TO SPORTZONE</div><h2 id="authTitle">FAN <em>LOGIN</em></h2><form id="authForm"><label>Name <input id="authName" placeholder="Your name" autocomplete="name"></label><label>Email <input id="authEmail" type="email" placeholder="you@example.com" required autocomplete="email"></label><label>Password <input id="authPassword" type="password" placeholder="Password" required minlength="6" autocomplete="current-password"></label><button class="button button-primary" type="submit" id="authSubmit">Login</button></form><button class="switch-auth" id="authSwitch">New here? Create an account</button><p class="fine-print">Demo authentication only. Accounts are stored locally in this browser and are not suitable for production.</p></div></div>
   </main>
 
   <footer><a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span>SPORT<span class="brand-accent">ZONE</span><small>PLAY. FOLLOW. BELIEVE.</small></span></a><p>Built for fans of cricket and football.</p><span class="footer-copy">© 2026 SPORTZONE. Demo project.</span></footer>
